@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Hello World!</title>
+</head>
+<body>
+<!--<h1 th:inline="text">Hello</h1>-->
+
+<!--<div sec:authorize="hasAnyRole('STUDENT')">Roll Number:<div sec:authentication="name"></div></div>-->
+
+<div sec:authorize="hasAnyRole('STUDENT')"><h1>Welcome to online book reading site.</h1></div>
+<h1 style="color: blue;">Hello  <span th:text="${student.firstName}"></span> <span th:text="${student.lastName}"></span> </h1>
+<div sec:authorize="hasAnyRole('ADMIN')"><h1>Hello Admin.</h1></div>
+
+<div sec:authorize="hasAnyRole('STUDENT')"><h3>Happy reading.</h3></div>
+
+<!--<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>-->
+
+<div sec:authorize="hasAnyRole('STUDENT','ADMIN')">Click <a th:href="@{/books/list}">here</a> to explore and read books.</div>
+
+<p></p>
+
+<div sec:authorize="hasRole('ADMIN')">Click <a th:href="@{/students/list}">here</a> to go to students.</div>
+<!--<div sec:authorize="hasRole('ADMIN')">Click <a th:href="@{/books/list}">here</a> to go to books.</div>-->
+<!--Your role is:-->
+<!--<div sec:authentication="principal.authorities"></div>-->
+
+<p>
+    Click <a th:href="@{/updatepasswordform}">here</a> to update your password.
+</p>
+
+<p>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+</p>
+
+</body>
+</html>

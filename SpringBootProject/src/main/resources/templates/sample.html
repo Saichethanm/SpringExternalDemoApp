@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Books</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<p></p>
+
+<div class="container">
+    <h1>Welcome to Online Book Reading Site.</h1>
+    <h2>Your User Id is : <div th:text="${student.id}"></div></h2>
+    <h2>Happy reading.</h2>
+
+    <p></p>
+    <a th:href="@{/home}">Back to home</a>
+</div>
+</body>
+
+</html>
+
+
+
+
